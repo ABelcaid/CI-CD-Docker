@@ -29,7 +29,7 @@ describe("API Tests", () => {
           .request(app)
           .get("/" + id)
           .end((err, response) => {
-            response.should.have.status(200);
+            response.should.have.status(201);
             response.body.should.be.a("object");
             done();
           });
