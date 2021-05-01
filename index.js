@@ -15,6 +15,7 @@ app.get("/", (req, res) => {
         const id =req.params.id;
         const User = data.find(user => user.id === id);
         res.json(User)
+          res.status(201).send(User);
   
 
 

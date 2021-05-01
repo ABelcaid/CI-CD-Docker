@@ -15,6 +15,7 @@ describe("API Tests", () => {
         .request(app)
         .get("/")
         .end((err, response) => {
+          response.should.have.status(200);
           response.body.should.be.a("array");
           response.body.length.should.not.be.eq(0);
           done();
@@ -28,6 +29,7 @@ describe("API Tests", () => {
           .request(app)
           .get("/" + id)
           .end((err, response) => {
+            response.should.have.status(200);
             response.body.should.be.a("object");
             done();
           });
